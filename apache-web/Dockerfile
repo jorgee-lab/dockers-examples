@@ -9,6 +9,7 @@ RUN apt install -y python3-pip
 RUN python3 -m pip install Django
 RUN apt install -y apache2
 RUN apt install -y apache2-utils
+COPY ./web/index.html /var/www/html/
 RUN apt clean
 EXPOSE 80
 
