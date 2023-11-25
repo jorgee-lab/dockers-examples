@@ -1,4 +1,4 @@
-# # Servidor mysql
+#  Servidor mysql
 
 cd .\mysql\
 
@@ -12,6 +12,7 @@ docker images
 
 # Ejecutar
 
-docker run --name mysql -d mysql_image:1.0
+docker run --name mysql-docker -d mysql_image:1.0
 
-#Referencias
+# Referencias
+https://www.returngis.net/2019/03/comunicar-contenedores-de-docker-entre-si/
