@@ -30,7 +30,7 @@ CREATE TABLE `bot-trading`.`signals_trading` (
 ) ENGINE=INNODB;
 
 DROP TABLE IF EXISTS `bot-trading`.users;
-CREATE TABLE `users` (
+CREATE TABLE `bot-trading`.`users` (
   `id_user` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3;
 
 DROP TABLE IF EXISTS `bot-trading`.status;
-CREATE TABLE `status` (
+CREATE TABLE `bot-trading`.`status` (
   `id_status` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `prop_status` varchar(200) NOT NULL,
   `value_status` varchar(200) NOT NULL,
@@ -68,14 +68,14 @@ INSERT INTO `bot-trading`.status
 VALUES('LAST_REPORT_DAILY', 'OK', CURRENT_TIMESTAMP);
 
 ############################20-12-2022
-ALTER TABLE signals_trading
+ALTER TABLE `bot-trading`.signals_trading
 ADD COLUMN temporality VARCHAR(15) AFTER signal_name;
 
-ALTER TABLE signals_trading
+ALTER TABLE `bot-trading`.signals_trading
 ADD COLUMN symbol VARCHAR(30) AFTER id_signal;
 
 DROP TABLE IF EXISTS `bot-trading`.alerts;
-CREATE TABLE `alerts` (
+CREATE TABLE `bot-trading`.`alerts` (
   `id_alert` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `symbol` varchar(30) NOT NULL,
   `temporality` varchar(15) NOT NULL,
@@ -98,9 +98,9 @@ CREATE TABLE `reports` (
   PRIMARY KEY (`id_report`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb3;
 
-INSERT INTO bot_configuration(prop_name, prop_value, description)VALUES('hour_send_report', '17:40', 'Horario en los que se envian los reportes diarios');
-INSERT INTO bot_configuration(prop_name, prop_value, description)VALUES('token_telegram', '5938062429:AAE9AZbfTLJOQF14_as0BQ5TUjUCQjou5gQ', 'Token de autenticacion de Telegram');
-INSERT INTO bot_configuration(prop_name, prop_value, description)VALUES('chat_idtelegram', '1713932199', 'Id del chat de Telegram');
+INSERT INTO `bot-trading`.bot_configuration(prop_name, prop_value, description)VALUES('hour_send_report', '17:40', 'Horario en los que se envian los reportes diarios');
+INSERT INTO `bot-trading`.bot_configuration(prop_name, prop_value, description)VALUES('token_telegram', '5938062429:AAE9AZbfTLJOQF14_as0BQ5TUjUCQjou5gQ', 'Token de autenticacion de Telegram');
+INSERT INTO `bot-trading`.bot_configuration(prop_name, prop_value, description)VALUES('chat_idtelegram', '1713932199', 'Id del chat de Telegram');
 
 ############################26-01-2023
 INSERT INTO `bot-trading`.bot_configuration(prop_name, prop_value, description)VALUES('symbols_report', 'BTCUSDT,ETHUSDT,BNBUSDT,ADAUSDT', 'Simbolos a los que se les generará reportes diarios');
