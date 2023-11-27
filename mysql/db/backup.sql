@@ -127,3 +127,4 @@ INSERT INTO `bot-trading`.bot_configuration(prop_name, prop_value, description)V
 ############################26-01-2023
 INSERT INTO `bot-trading`.bot_configuration(prop_name, prop_value, description)VALUES('symbols_report', 'BTCUSDT,ETHUSDT,BNBUSDT,ADAUSDT', 'Simbolos a los que se les generará reportes diarios');
 INSERT INTO `bot-trading`.users(id_user, name, email, password, is_admin, date_reg) VALUES(1, 'Juan Ramirez', 'juan.a.ramirez.lopez@gmail.com', 'pbkdf2:sha256:260000$l7qudJ9QYh1MUq01$b915ee7446a99e8da0604368d818dd4bf13a588e908dd7c26dd530c23e3380f7', 1, '2022-12-19 09:44:52');
+INSERT INTO `bot-trading`.bot_configuration(prop_name, prop_value, description)VALUES('token_git', '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', 'Token con el que se subirá los pdf del grafico analizado a GIT');
